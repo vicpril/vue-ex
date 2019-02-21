@@ -38,6 +38,10 @@ export default {
 				stockPrice: this.stock.price,
 				quantity: this.quantity
 			};
+			if (order.quantity * order.stockPrice > this.$store.getters.funds) {
+				alert('You have Insufficient funds');
+				return
+			};
 			// console.log(order);
 			this.$store.dispatch("buyStock", order);
 			this.quantity = 0;

@@ -15,7 +15,7 @@
 					<button
 						class="btn btn-info"
 						@click="sellStock"
-						:disabled="quantity <= 0 || !isInt(quantity)"
+						:disabled="quantity <= 0 || quantity > stock.quantity ||!isInt(quantity)"
 					>Sell</button>
 				</div>
 			</div>
